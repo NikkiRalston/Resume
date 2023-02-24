@@ -17,13 +17,18 @@ function addMovie() {
 
 // Display movie list in separate window
 function displayList() {
-  const listWindow = window.open('', 'Movie List', 'width=400,height=400');
+  /*const listWindow = window.open('', 'Movie List', 'width=400,height=400');
   listWindow.document.write('<h1>Movie List:</h1>');
   listWindow.document.write('<ul>');
   for (let i = 0; i < movies.length; i++) {
     listWindow.document.write(`<li>${movies[i]}</li>`);
   }
-  listWindow.document.write('</ul>');
+  listWindow.document.write('</ul>'); */
+  movieList.value = "";
+  movies.sort();
+  for (let i = 0; i < movies.length; i++) {
+    movieList.value += movies[i] + " ";
+  }
 }
 
 // Reset movie list and clear display
